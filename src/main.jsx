@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { AuthProvider as OidcAuthProvider } from "react-oidc-context";
-import { AuthProvider } from "./context/auth/AuthContext";
 
 const cognitoAuthConfig = {
   authority: import.meta.env.VITE_APP_AUTH_AUTHORITY,
@@ -19,9 +18,9 @@ const cognitoAuthConfig = {
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <OidcAuthProvider {...cognitoAuthConfig}>
-      <AuthProvider>
+      {/* <AuthProvider> */}
         <App />
-      </AuthProvider>
+      {/* </AuthProvider> */}
     </OidcAuthProvider>
   </React.StrictMode>
 );
