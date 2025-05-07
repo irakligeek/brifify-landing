@@ -12,15 +12,13 @@ const cognitoAuthConfig = {
   scope: "email openid phone",
   onSigninCallback: () => {
     window.history.replaceState({}, document.title, window.location.pathname);
-  }
+  },
 };
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <OidcAuthProvider {...cognitoAuthConfig}>
-      {/* <AuthProvider> */}
-        <App />
-      {/* </AuthProvider> */}
+      <App />
     </OidcAuthProvider>
   </React.StrictMode>
 );

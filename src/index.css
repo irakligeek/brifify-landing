@@ -1,4 +1,4 @@
-@tailwind utilities;
+/* @tailwind utilities; */
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -29,10 +29,24 @@ a:hover {
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Poppins", sans-serif;
   }
+}
+
+/* Custom utility classes for the landing page */
+.font-inter {
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
 }

@@ -39,7 +39,7 @@ jobs:
 
     - name: Sync files to S3
       run: |
-        aws s3 sync ./dist/ s3://app.brifify.com --delete  # Sync everything in the 'dist' folder to S3 bucket.
+        aws s3 sync ./dist/ s3://brifify.com --delete  # Sync everything in the 'dist' folder to S3 bucket.
 
     - name: Invalidate CloudFront cache
       run: |
