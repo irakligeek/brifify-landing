@@ -1,12 +1,13 @@
 import { Button } from "@/components/UI/button";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X, LogIn, LogOut } from "lucide-react";
 import { useState } from "react";
 import Logo from "../UI/Logo";
+import { useAuth } from "react-oidc-context";
 
 // Create a reusable menu items component
 const MenuItems = ({ className = "" }) => {
   const items = [
-    { href: "#try-it", label: "Try it" },
+    { href: "#why-brifify", label: "Why Brifify" },
     { href: "#how-it-works", label: "How it works" },
     { href: "#use-cases", label: "Use cases" },
     { href: "#pricing", label: "Pricing" },
@@ -30,7 +31,24 @@ const MenuItems = ({ className = "" }) => {
 
 export default function NavbarMain() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const auth = useAuth();
+  const isAuthenticated = auth.isAuthenticated;
+  
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  
+  const handleAuthAction = () => {
+    const clientId = import.meta.env.VITE_APP_CLIENT_ID;
+    const logoutUri = import.meta.env.VITE_APP_REDIRECT_URI;
+    const cognitoDomain = import.meta.env.VITE_APP_COGNITO_DOMAIN;
+    if (isAuthenticated) {
+      // Log out
+      auth.removeUser();
+      window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutUri)}`;
+    } else {
+      // Log in - redirect to authentication page
+      auth.signinRedirect();
+    }
+  };
 
   return (
     <nav className="w-full flex justify-center">
@@ -60,7 +78,23 @@ export default function NavbarMain() {
 
         {/* Right-aligned items - only visible at lg (1024px) and above */}
         <div className="!hidden lg:!flex !flex-row !items-center !ml-auto !space-x-4">
-          {/* <Login /> */}
+          <Button
+            onClick={handleAuthAction}
+            variant="outline"
+            className="!flex !items-center !gap-2 !border !border-gray-300 !text-gray-700 hover:!bg-gray-50"
+          >
+            {isAuthenticated ? (
+              <>
+                <LogOut className="h-4 w-4" />
+                Logout
+              </>
+            ) : (
+              <>
+                <LogIn className="h-4 w-4" />
+                Login
+              </>
+            )}
+          </Button>
           <Button
             onClick={() =>
               (window.location.href = "https://www.app.brifify.com")
@@ -84,6 +118,23 @@ export default function NavbarMain() {
 
           <div className="!flex !flex-col !items-start !space-y-4 !w-full !mt-4 !border-t !pt-4">
             <Button
+              onClick={handleAuthAction}
+              variant="outline"
+              className="!w-full !flex !items-center !gap-2 !border !border-gray-300 !text-gray-700 hover:!bg-gray-50"
+            >
+              {isAuthenticated ? (
+                <>
+                  <LogOut className="h-4 w-4" />
+                  Logout
+                </>
+              ) : (
+                <>
+                  <LogIn className="h-4 w-4" />
+                  Login
+                </>
+              )}
+            </Button>
+            <Button
               onClick={() =>
                 (window.location.href = "https://www.app.brifify.com")
               }
@@ -92,7 +143,6 @@ export default function NavbarMain() {
               Go To App
               <ArrowRight className="h-4 w-4" />
             </Button>
-            {/* <Login /> */}
           </div>
         </div>
       </div>

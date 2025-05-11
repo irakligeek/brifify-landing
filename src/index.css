@@ -1,4 +1,73 @@
+/* @tailwind base;
+@tailwind components; */
 /* @tailwind utilities; */
+
+/* Custom font imports */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap'); */
+
+/* Animation for the text cursor blinking effect */
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Animation for the progress bar */
+@keyframes progress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.animate-progress {
+  animation: progress 3s ease-in-out forwards;
+}
+
+/* Float animation for feature cards */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Slow float animation variation */
+@keyframes float-slow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float-slow {
+  animation: float-slow 5s ease-in-out infinite;
+}
+
+/* Pulse glow animation */
+@keyframes pulse-glow {
+  0% { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+  50% { box-shadow: 0 5px 25px rgba(255, 51, 102, 0.3); }
+  100% { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Subtle scale animation */
+@keyframes scale {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.animate-scale {
+  animation: scale 4s ease-in-out infinite;
+}
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -13,6 +82,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  /* Add scroll behavior globally */
+  scroll-behavior: smooth;
 }
 
 a {
@@ -39,6 +111,12 @@ a:hover {
   h5,
   h6 {
     font-family: "Poppins", sans-serif;
+  }
+  
+  /* Add scroll margin to sections with IDs (for anchor navigation) */
+  section[id],
+  div[id] {
+    scroll-margin-top: 80px; /* Adjust this value based on your navbar height */
   }
 }
 
