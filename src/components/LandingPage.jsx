@@ -338,7 +338,7 @@ export default function LandingPage() {
               <h3 className="text-lg font-semibold mb-2 font-poppins">
                 Save Hours of Back and Forth
               </h3>
-              <p className="text-gray-500 text-sm text-left">
+              <p className="text-gray-500 text-sm">
                 Brifify cuts through the noise by asking the right questions
                 upfront. Instead of endless meetings or confusing email threads,
                 you get a developer-ready brief fast.
@@ -351,7 +351,7 @@ export default function LandingPage() {
               <h3 className="text-lg font-semibold mb-2 font-poppins">
                 No Technical Knowledge Required
               </h3>
-              <p className="text-gray-500 text-sm text-left">
+              <p className="text-gray-500 text-sm">
                 You don't need to speak "developer." Brifify guides you
                 step-by-step, asking tailored, non-technical questions to
                 understand your idea.
@@ -364,7 +364,7 @@ export default function LandingPage() {
               <h3 className="text-lg font-semibold mb-2 font-poppins">
                 Start Your Projects Faster
               </h3>
-              <p className="text-gray-500 text-sm text-left">
+              <p className="text-gray-500 text-sm">
                 Well-scoped projects start smoother and finish faster. Brifify
                 helps you align with developers from day one avoiding delays and
                 miscommunication.
@@ -377,7 +377,7 @@ export default function LandingPage() {
               <h3 className="text-lg font-semibold mb-2 font-poppins">
                 AI-Powered Precision
               </h3>
-              <p className="text-gray-500 text-sm text-left">
+              <p className="text-gray-500 text-sm">
                 Brifify's smart AI assistant asks follow-up questions based on
                 your responses. You get a clear, complete brief that covers
                 everything a developer would ask.
@@ -390,7 +390,7 @@ export default function LandingPage() {
               <h3 className="text-lg font-semibold mb-2 font-poppins">
                 Flexible Export & Sharing
               </h3>
-              <p className="text-gray-500 text-sm text-left">
+              <p className="text-gray-500 text-sm">
                 Once your brief is ready, export it as a PDF, DOCX or share it
                 via a link. You can also edit and customize the brief to fit
                 your needs.
@@ -403,7 +403,7 @@ export default function LandingPage() {
               <h3 className="text-lg font-semibold mb-2 font-poppins">
                 Built for Non-Tech Creators
               </h3>
-              <p className="text-gray-500 text-sm text-left">
+              <p className="text-gray-500 text-sm">
                 Whether you're an entrepreneur, designer, or marketer, Brifify
                 helps you define and communicate your project, no tech knowledge
                 needed.
@@ -693,7 +693,7 @@ export default function LandingPage() {
                 <div
                   key={index}
                   className={`rounded-xl overflow-hidden shadow-lg bg-white ${
-                    plan.popular ? "ring-2 ring-[#4361ee] relative" : ""
+                    plan.popular ? "ring-2 ring-[#4361ee] relative" : "ring-1 ring-gray-300"
                   }`}
                 >
                   {plan.popular && (
