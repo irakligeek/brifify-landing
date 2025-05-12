@@ -180,7 +180,7 @@ export default function LandingPage() {
     {
       name: "Free",
       price: "$0",
-      period: "forever",
+      period: "No payment required",
       features: ["Generate 2 briefs", "Export to PDF"],
       cta: "Get Started",
       popular: false,
