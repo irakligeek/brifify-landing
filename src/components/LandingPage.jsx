@@ -270,6 +270,7 @@ export default function LandingPage() {
               </p>
               <div className="flex flex-col items-center gap-2">
                 <button
+                  id="cta"
                   onClick={() => scrollToSection(tryItRef)}
                   className="w-full px-8 py-3 rounded-lg font-medium text-white bg-gradient-to-r from-[#ff3366] to-[#7209b7] hover:opacity-90 transition-all shadow-lg hover:shadow-xl cursor-pointer"
                 >
