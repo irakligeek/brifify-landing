@@ -228,32 +228,24 @@ export default function LandingPage() {
       description: "Smart follow-up questions that uncover all project details",
       icon: <MessageSquare className="w-5 h-5 text-white" />,
       color: "from-[#ff3366] to-[#ff6b6b]",
-      animation: "animate-float",
-      delay: 0,
     },
     {
       title: "Tech Stack Recommendations",
       description: "Get suggested technologies best suited for your project",
       icon: <Code className="w-5 h-5 text-white" />,
       color: "from-[#7209b7] to-[#5c33f6]",
-      animation: "animate-float-slow",
-      delay: 1,
     },
     {
       title: "Clear Documentation",
       description: "Structured briefs that developers can easily understand",
       icon: <FileQuestion className="w-5 h-5 text-white" />,
       color: "from-[#4361ee] to-[#3a0ca3]",
-      animation: "animate-float",
-      delay: 0.5,
     },
     {
       title: "Export & Share",
       description: "Download as PDF or share via link with your team",
       icon: <Download className="w-5 h-5 text-white" />,
       color: "from-[#ff00ac] to-[#e100ff]",
-      animation: "animate-float-slow",
-      delay: 1.5,
     },
   ];
 
@@ -295,12 +287,12 @@ export default function LandingPage() {
               {featureCards.map((card, index) => (
                 <div 
                   key={index}
-                  className={`absolute bg-white rounded-lg shadow-lg border border-gray-100 p-4 w-60 animate-pulse-glow ${card.animation}`}
+                  className="absolute bg-white rounded-lg border border-gray-100 p-4 w-60"
                   style={{
                     top: `${(index % 4) * 24}%`,
                     left: index % 2 === 0 ? '0%' : '52%',
                     zIndex: 10,
-                    animationDelay: `${card.delay}s`,
+                    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.5)',
                   }}
                 >
                   <div className={`absolute -top-3 -left-3 w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-r ${card.color} shadow-md`}>
